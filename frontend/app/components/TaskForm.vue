@@ -24,7 +24,7 @@ function validate(): boolean {
   errors.value = {};
   const titleError = validateTaskTitle(title.value);
   const descError = validateTaskDescription(description.value);
-  const dateError = isEditing.value ? null : validateDueDate(dueDate.value);
+  const dateError = isEditing.value ? null : validateDueDate(dueDate.value || '');
 
   if (titleError) errors.value.title = titleError;
   if (descError) errors.value.description = descError;
